@@ -6,7 +6,7 @@ from pyspark.sql import functions as f
 class parquetVsCsv:
     def __init__(self):
         self.spark=SparkSession.builder.getOrCreate()
-        self.main_path="C:\/Users\Cindy\/testdata"
+        self.main_path=r'\Users\Cindy_Sun\testdata'
 
     #read original generated parquet,and change it into csv with header
     def parquet2Csv(self,entity):
@@ -95,8 +95,8 @@ class parquetVsCsv:
 
 
 cv=parquetVsCsv()
-# cv.parquet2Csv("sales_nike_direct_pos_detail")
+cv.parquet2Csv("margin")
 # cv.csv2parquet("sales_nike_direct_pos_detail")
-cv.checkDtypePart("sales_nike_direct_pos_detail","cn_pos_dt","cn_pos_transaction_date")
+# cv.checkDtypePart("sales_nike_direct_pos_detail","cn_pos_dt","cn_pos_transaction_date")
 # cv.checkDtypePart("sales_nike_direct_pos_detail")
 
